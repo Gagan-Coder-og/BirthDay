@@ -43,7 +43,7 @@ function blow(){document.getElementById('cake').classList.add('cut');document.ge
 function revealSecret(){document.getElementById('secret').style.display='block';confetti(70)}
 function replay(){document.getElementById('env').classList.remove('open');document.getElementById('cake').classList.remove('cut');go(0)}
 function toggleTheme(){document.body.classList.toggle('dark')}
-function unlock(){let v=document.getElementById('pass').value.trim().toLowerCase();if(['sister','parul','didi'].includes(v)){document.getElementById('gate').style.display='none';try{localStorage.setItem('parulUnlocked','1')}catch(e){}confetti(20)}else document.getElementById('err').textContent='Wrong secret 😭 Try “sister”.'}
+function unlock(){let v=document.getElementById('pass').value.trim().toLowerCase();if(['ghghdf','ghghd','ghgh'].includes(v)){document.getElementById('gate').style.display='none';try{localStorage.setItem('parulUnlocked','1')}catch(e){}confetti(20)}else document.getElementById('err').textContent='Wrong secret 😭 Try “sister”.'}
 try{if(localStorage.getItem('parulUnlocked')==='1')document.getElementById('gate').style.display='none'}catch(e){}
 document.getElementById('pass').addEventListener('keydown',e=>{if(e.key==='Enter')unlock()});
 function confetti(count=40){let box=document.getElementById('particles'),icons=['💗','✨','🌸','💕','⭐','🎀','🩷'];for(let i=0;i<count;i++){let x=document.createElement('div');x.className='p';x.textContent=icons[Math.floor(Math.random()*icons.length)];x.style.left=Math.random()*100+'vw';x.style.fontSize=(12+Math.random()*18)+'px';x.style.animationDuration=(2.5+Math.random()*3)+'s';box.appendChild(x);setTimeout(()=>x.remove(),6000)}}
